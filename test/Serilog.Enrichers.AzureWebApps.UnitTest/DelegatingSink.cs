@@ -1,24 +1,22 @@
-﻿namespace Serilog.Enrichers.AzureWebApps.UnitTest
+﻿using System;
+using Serilog.Core;
+using Serilog.Events;
+
+namespace Serilog.Enrichers.AzureAppService.UnitTest
 {
-    using System;
-
-    using Serilog.Core;
-    using Serilog.Events;
-
     public class DelegatingSink : ILogEventSink
     {
-        readonly Action<LogEvent> _write;
+        private readonly Action<LogEvent> _write;
 
         public DelegatingSink(Action<LogEvent> write)
         {
-            if (write == null) throw new ArgumentNullException(nameof(write));
+            if (write == null)
+                throw new ArgumentNullException(nameof(write));
+
             _write = write;
         }
 
-        public void Emit(LogEvent logEvent)
-        {
-            _write(logEvent);
-        }
+        public void Emit(LogEvent logEvent) => _write(logEvent);
 
         public static LogEvent GetLogEvent(Action<ILogger> writeAction)
         {

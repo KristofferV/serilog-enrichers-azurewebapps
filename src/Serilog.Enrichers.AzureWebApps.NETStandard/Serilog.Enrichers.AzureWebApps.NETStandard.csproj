@@ -8,8 +8,8 @@
     <ProjectGuid>{97CEB5C3-B318-4923-8301-969185914733}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Serilog.Enrichers.AzureWebApps.NETStandard</RootNamespace>
-    <AssemblyName>Serilog.Enrichers.AzureWebApps.NETStandard</AssemblyName>
+    <RootNamespace>Serilog.Enrichers.AzureAppService.NETStandard</RootNamespace>
+    <AssemblyName>Serilog.Enrichers.AzureAppService.NETStandard</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -39,9 +39,8 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AzureWebJobsTypeEnricher.cs" />
-    <Compile Include="AzureWebAppsNameEnricher.cs" />
-    <Compile Include="AzureWebJobsNameEnricher.cs" />
+    <Compile Include="AzureAppServiceLoggerConfigurationExtensions.cs" />
+    <Compile Include="EnvironmentVariableEnricher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
