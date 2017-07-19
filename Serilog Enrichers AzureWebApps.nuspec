@@ -1,24 +1,24 @@
 <?xml version="1.0"?>
 <package >
-  <metadata>
-    <id>Serilog.Enrichers.AzureAppService</id>
-    <version>1.1.0</version>
-    <title>Serilog.Enrichers.AzureAppService</title>
-    <authors>Søren Nguyen Boisen</authors>
-    <authors>Adam Lith, Mats Iremark, Felix Svensson, Nils Grashorn</authors>
-    <owners>HivePeople ApS</owners>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Enriches Serilog events with information from Azure App Service runtime</description>
-    <releaseNotes>Included support for .NET Standard 1.3</releaseNotes>
-    <copyright>Copyright 2017</copyright>
-    <tags>serilog enricher azure webapps</tags>
-    <projectUrl>https://github.com/hivepeople/serilog-enrichers-azurewebapps</projectUrl>
-    <dependencies>
-      <dependency id="Serilog" version="2.0.0" />
-    </dependencies> 
-  </metadata>
-  <files>
-    <file src="src\Serilog.Enrichers.AzureWebApps\bin\release\Serilog.Enrichers.AzureAppService.dll" target="lib\net45\Serilog.Enrichers.AzureAppService.dll"/>
-    <file src="src\Serilog.Enrichers.AzureWebApps.NETStandard\bin\Release\Serilog.Enrichers.AzureAppService.NETStandard.dll" target="lib\netstandard1.3\Serilog.Enrichers.AzureAppService.dll"/>
-  </files>
+    <metadata>
+        <id>Serilog.Enrichers.AzureAppService</id>
+        <version>1.0.0</version>
+        <title>Serilog.Enrichers.AzureAppService</title>
+        <authors>Søren Nguyen Boisen</authors>
+        <owners>HivePeople ApS</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Enriches Serilog events with information from Azure App Service runtime</description>
+        <releaseNotes>Rewritten, added enrichers for WebApps host name (URL) and WebApps instance id</releaseNotes>
+        <copyright>Copyright 2017</copyright>
+        <tags>serilog enricher azure webapps</tags>
+        <projectUrl>https://github.com/hivepeople/serilog-enrichers-azurewebapps</projectUrl>
+        <licenseUrl>https://raw.githubusercontent.com/hivepeople/serilog-enrichers-azurewebapps/master/LICENSE</licenseUrl>
+        <dependencies>
+            <dependency id="Serilog" version="2.0.0" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="src\Serilog.Enrichers.AzureWebApps\bin\release\Serilog.Enrichers.AzureAppService.dll" target="lib\net45\Serilog.Enrichers.AzureAppService.dll"/>
+        <file src="src\Serilog.Enrichers.AzureWebApps.NETStandard\bin\Release\Serilog.Enrichers.AzureAppService.NETStandard.dll" target="lib\netstandard1.3\Serilog.Enrichers.AzureAppService.dll"/>
+    </files>
 </package>
