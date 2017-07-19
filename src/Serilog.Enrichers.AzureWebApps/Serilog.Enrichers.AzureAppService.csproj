@@ -7,8 +7,8 @@
     <ProjectGuid>{513171F2-32F9-460A-BA82-F8786951A1D6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Serilog.Enrichers.AzureWebApps</RootNamespace>
-    <AssemblyName>Serilog.Enrichers.AzureWebApps</AssemblyName>
+    <RootNamespace>Serilog.Enrichers.AzureAppService</RootNamespace>
+    <AssemblyName>Serilog.Enrichers.AzureAppService</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -44,9 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AzureWebJobsNameEnricher.cs" />
-    <Compile Include="AzureWebJobsTypeEnricher.cs" />
-    <Compile Include="AzureWebAppsNameEnricher.cs" />
+    <Compile Include="AzureAppServiceLoggerConfigurationExtensions.cs" />
+    <Compile Include="EnvironmentVariableEnricher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

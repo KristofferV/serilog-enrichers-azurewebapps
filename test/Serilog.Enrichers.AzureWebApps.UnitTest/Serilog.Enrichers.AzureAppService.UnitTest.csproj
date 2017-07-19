@@ -6,8 +6,8 @@
     <ProjectGuid>{114C3B7B-ED77-4D2A-B107-A2BA330B647B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Serilog.Enrichers.AzureWebApps.UnitTest</RootNamespace>
-    <AssemblyName>Serilog.Enrichers.AzureWebApps.UnitTest</AssemblyName>
+    <RootNamespace>Serilog.Enrichers.AzureAppService.UnitTest</RootNamespace>
+    <AssemblyName>Serilog.Enrichers.AzureAppService.UnitTest</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,8 +35,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
+    <Reference Include="FluentAssertions, Version=4.19.3.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentAssertions.4.19.3\lib\net45\FluentAssertions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=4.19.3.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentAssertions.4.19.3\lib\net45\FluentAssertions.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.7.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NUnit.3.7.1\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
@@ -44,6 +52,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -54,16 +64,14 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="AzureWebJobsTypeEnricherTest.cs" />
-    <Compile Include="AzureWebJobsNameEnricherTest.cs" />
     <Compile Include="DelegatingSink.cs" />
-    <Compile Include="AzureWebAppsNameEnricherTest.cs" />
+    <Compile Include="EnvironmentVariableEnricherTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Serilog.Enrichers.AzureWebApps\Serilog.Enrichers.AzureWebApps.csproj">
+    <ProjectReference Include="..\..\src\Serilog.Enrichers.AzureWebApps\Serilog.Enrichers.AzureAppService.csproj">
       <Project>{513171f2-32f9-460a-ba82-f8786951a1d6}</Project>
-      <Name>Serilog.Enrichers.AzureWebApps</Name>
+      <Name>Serilog.Enrichers.AzureAppService</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
