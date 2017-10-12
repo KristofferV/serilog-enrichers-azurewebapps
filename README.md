@@ -22,12 +22,20 @@ Log.Logger = new LoggerConfiguration()
     .CreateLogger();
 ```
 
+### About the environment variables
+
+A proper description of the Azure App service environment and the available variables is [here][1]. For WebJobs, the
+information is [here][2].
+
+[1]: https://github.com/projectkudu/kudu/wiki/Azure-runtime-environment
+[2]: https://github.com/projectkudu/kudu/wiki/WebJobs#environment-settings
+
 ### Included enrichers
 
 The package includes:
 
- * `WithAzureWebAppsSiteName()` - adds the name of the Azure WebApp the application runs within
- * `WithAzureWebAppsHostName()` - adds the URL of the Azure WebApp the application runs within
- * `WithAzureWebAppsInstanceId()` - adds the identifier of the Azure App Service VM instance the app runs within
- * `WithAzureWebJobsName()` - adds the name of the Azure WebJob (if the application is a WebJob)
- * `WithAzureWebJobsType` - adds the type name of the Azure WebJob (continuous or triggered)
+ * `WithAzureWebAppsSiteName()` - adds the name of the Azure WebApp the application runs within - reads the WEBSITE\_SITE\_NAME environment variable.
+ * `WithAzureWebAppsHostName()` - adds the URL of the Azure WebApp the application runs within - reads WEBSITE\_HOSTNAME.
+ * `WithAzureWebAppsInstanceId()` - adds the identifier of the Azure App Service VM instance the app runs within - reads WEBSITE\_INSTANCE\_ID.
+ * `WithAzureWebJobsName()` - adds the name of the Azure WebJob (if the application is a WebJob) - reads WEBJOBS\_NAME.
+ * `WithAzureWebJobsType` - adds the type name of the Azure WebJob (continuous or triggered) - reads WEBJOBS\_TYPE.
