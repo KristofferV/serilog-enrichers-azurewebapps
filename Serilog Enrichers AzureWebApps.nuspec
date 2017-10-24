@@ -2,7 +2,7 @@
 <package >
     <metadata>
         <id>Serilog.Enrichers.AzureAppService</id>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
         <title>Serilog.Enrichers.AzureAppService</title>
         <authors>Søren Nguyen Boisen</authors>
         <owners>HivePeople ApS</owners>
