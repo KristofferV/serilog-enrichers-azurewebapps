@@ -38,6 +38,10 @@ namespace Serilog
         /// </summary>
         /// <param name="enrichmentConfiguration">Enrichment configuration to complete.</param>
         /// <returns>Logger configuration with this enricher configured.</returns>
+        /// <remarks>
+        /// The value of this environment variable cannot be trusted. Use
+        /// <see cref="WithAzureWebAppsSlotName(LoggerEnrichmentConfiguration)"/> instead.
+        /// </remarks>
         // For details see: http://blog.amitapple.com/post/2014/11/azure-websites-slots/
         public static LoggerConfiguration WithAzureWebAppsHostName(this LoggerEnrichmentConfiguration enrichmentConfiguration)
         {
@@ -48,6 +52,27 @@ namespace Serilog
                 serilogName: "AzureWebAppsHostName",
                 environmentName: "WEBSITE_HOSTNAME",
                 defaultValue: "localhost");
+
+            return enrichmentConfiguration.With(enricher);
+        }
+
+        /// <summary>
+        /// Adds the Azure slot name to log events. The slot name is the value taken from
+        /// environment variable WEBSITE_SLOT_NAME. In Azure App Service this contains the name of
+        /// the deployment slot.
+        /// </summary>
+        /// <param name="enrichmentConfiguration">Enrichment configuration to complete.</param>
+        /// <returns>Logger configuration with this enricher configured.</returns>
+        // For details see: https://github.com/Azure/azure-webjobs-sdk/issues/1369#issuecomment-335903927
+        public static LoggerConfiguration WithAzureWebAppsSlotName(this LoggerEnrichmentConfiguration enrichmentConfiguration)
+        {
+            if (enrichmentConfiguration == null)
+                throw new ArgumentNullException(nameof(enrichmentConfiguration));
+
+            var enricher = new EnvironmentVariableEnricher(
+                serilogName: "AzureWebAppsSlotName",
+                environmentName: "WEBSITE_SLOT_NAME",
+                defaultValue: "unknown");
 
             return enrichmentConfiguration.With(enricher);
         }
